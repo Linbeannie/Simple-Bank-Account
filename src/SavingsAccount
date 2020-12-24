@@ -1,0 +1,28 @@
+/*
+    Title: SavingsAccount.java
+    Author: Madeleine Macaulay
+    Email: mmacaulay@csumb.edu
+    Abstract: Subclass of Account, handles SavingsAccount information.
+    Date: 10/21/2020
+ */
+public class SavingsAccount extends Account {
+    private double interestRate;
+    private double monthlyInterest;
+
+    public SavingsAccount(){
+        interestRate = 0;
+        monthlyInterest = 0;
+    }
+    public SavingsAccount(double interestRate){
+        this.interestRate = interestRate;
+    }
+
+    public double getMonthlyInterest() {
+        return this.monthlyInterest;
+    }
+
+    public void calculateInterest() {
+        monthlyInterest = interestRate * getBalance();
+        setBalance(getBalance() + monthlyInterest);
+    }
+}
